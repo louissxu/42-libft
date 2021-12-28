@@ -4,7 +4,7 @@
 
 int main(void)
 {
-	unsigned char tests[] = {'a', 'b', '1', '5', ' ', 'A', 'Z', '\0'};
+	unsigned char tests[] = {'a', 'b', 'z', '1', '5', ' ', 'A', 'B', 'Z', '!', '[', '{', '\0'};
 	int i = 0;
 	int ft_result;
 	int inbuilt_result;
