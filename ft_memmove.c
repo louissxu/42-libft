@@ -1,20 +1,12 @@
 void	*memmove(void *dst, const void *src, size_t len)
 {
 	size_t i;
-	int start_at_beginning;
-
-	start_at_beginning = 1;
-	i = 0;
-	while (i < len)
+	
+	if (dst == src)
 	{
-		if (dst[i] == src)
-		{
-			start_at_beginning = 0;
-			break
-		}
-		i++;
+		return (dst);
 	}
-	if (start_at_beginning)
+	if (src - dst > 0)
 	{
 		i = 0;
 		while (i < len)
