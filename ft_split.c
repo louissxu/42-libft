@@ -21,7 +21,7 @@ static char	*priv_strdup_partial(char const *s, size_t start, size_t end)
 	return (word);
 }
 
-void	priv_destroy(char **words, size_t len)
+static void	priv_destroy(char **words, size_t len)
 {
 	size_t	i;
 	
