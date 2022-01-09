@@ -1,4 +1,4 @@
-char	*strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
 	char	*result;
 	size_t	len;
