@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:54:35 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/11 02:45:34 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/11 03:48:20 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,19 @@ static size_t	priv_num_of_words(char const *s, char c)
 	return (number_of_words);
 }
 
+static void	priv_find_word(char const *s, size_t *i, size_t *j, char c)
+{
+	while (s[*i] == c)
+	{
+		(*i)++;
+	}
+	*j = *i;
+	while (s[*j] && s[*j] != c)
+	{
+		(*j)++;
+	}
+}
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	num_of_words;
@@ -79,19 +92,11 @@ char	**ft_split(char const *s, char c)
 	words = malloc(sizeof (*words) * (num_of_words + 1));
 	if (!words)
 		return (NULL);
-	word_i = 0;
+	word_i = 0 - 1;
 	i = 0;
-	while (word_i < num_of_words)
+	while (++word_i < num_of_words)
 	{
-		while (s[i] == c)
-		{
-			i++;
-		}
-		j = i;
-		while (s[j] && s[j] != c)
-		{
-			j++;
-		}
+		priv_find_word(s, &i, &j, c);
 		words[word_i] = priv_strdup_partial(s, i, j);
 		if (!words[word_i])
 		{
@@ -99,7 +104,6 @@ char	**ft_split(char const *s, char c)
 			return (NULL);
 		}
 		i = j;
-		word_i++;
 	}
 	words[word_i] = NULL;
 	return (words);
