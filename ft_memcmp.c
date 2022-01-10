@@ -6,13 +6,13 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:54:06 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 16:54:07 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/10 17:09:13 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (s1[i] == s2[i] && i < n)
@@ -21,7 +21,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	if (i < n)
 	{
-		return (s1[i] - s2[i])
+		return (s1[i] - s2[i]);
 	}
 	return (0);
 }

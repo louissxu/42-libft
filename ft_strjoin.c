@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:54:41 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 16:54:42 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/10 17:42:12 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 	size_t	j;
 
-	len = ft_strlen(s1) + ft_strlen(s2) + 1;
-	result = malloc(sizeof *result * len);
+	len = ft_strlen(s1) + ft_strlen(s2);
+	result = malloc(sizeof (*result) * (len + 1));
 	if (!result)
 	{
 		return (result);
@@ -40,4 +40,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	result[i + j] = '\0';
 	return (result);
 }
-

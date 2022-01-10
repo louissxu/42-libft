@@ -6,11 +6,11 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:54:03 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 16:54:04 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/10 17:08:01 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	size_t	size;
 

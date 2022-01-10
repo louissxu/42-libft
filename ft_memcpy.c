@@ -6,13 +6,13 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:54:07 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 16:54:09 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/10 17:09:33 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)

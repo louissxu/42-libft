@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:54:38 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 16:54:39 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/10 17:40:33 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strdup(const char *s1)
 	size_t	i;
 
 	len = ft_strlen(s1);
-	result = malloc(sizeof *result * len);
+	result = malloc(sizeof (*result) * len);
 	if (!result)
 	{
 		return (result);

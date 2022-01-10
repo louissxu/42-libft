@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:54:48 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 16:54:49 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/10 17:43:26 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 
 	len = ft_strlen(s);
-	result = malloc(sizeof *result * (len + 1));
+	result = malloc(sizeof (*result) * (len + 1));
 	if (!result)
 	{
 		return (result);

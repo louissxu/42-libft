@@ -6,14 +6,14 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:54:42 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 16:54:44 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/10 17:42:42 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	while (dst[i] && i < dstsize - 1)
@@ -37,5 +37,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	}
 	return (i + j);
 }
-
-

@@ -6,11 +6,11 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:54:58 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 16:54:59 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/10 17:45:53 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.c"
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -23,7 +23,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	{
 		len = chars_left;
 	}
-	result = malloc(sizeof *result * len);
+	result = malloc(sizeof (*result) * len);
 	if (!result)
 	{
 		return (0);
@@ -36,4 +36,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	return (result);
 }
-

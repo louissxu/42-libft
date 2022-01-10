@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:53:53 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 16:53:54 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/10 17:05:49 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,4 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		ft_lstdelone(*lst, del);
 		*lst = next;
 	}
-
+}

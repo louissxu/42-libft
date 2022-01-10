@@ -6,14 +6,14 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:54:09 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 16:54:10 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/10 17:10:33 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t i;
-	
+	size_t	i;
+
 	if (dst == src)
 	{
 		return (dst);
