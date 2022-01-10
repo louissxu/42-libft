@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:54:01 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 17:07:40 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/10 20:26:17 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*elem;
 
-	elem = malloc(typeof (*elem) * 1);
+	elem = malloc(sizeof (*elem) * 1);
 	if (!elem)
 	{
 		return (NULL);
