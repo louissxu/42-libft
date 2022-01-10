@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:54:35 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 21:21:18 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/11 02:45:34 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,16 @@ static size_t	priv_num_of_words(char const *s, char c)
 	size_t	i;
 	size_t	number_of_words;
 
-	number_of_words = 1;
+	number_of_words = 0;
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] != c)
 		{
-			number_of_words++;
+			if (s[i + 1] == c || s[i + 1] == '\0')
+			{
+				number_of_words++;
+			}
 		}
 		i++;
 	}
@@ -66,29 +69,38 @@ static size_t	priv_num_of_words(char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
+	size_t	num_of_words;
 	size_t	word_i;
 	size_t	i;
 	size_t	j;
 	char	**words;
 
-	words = malloc(sizeof (*words) * (priv_num_of_words(s, c) + 1));
+	num_of_words = priv_num_of_words(s, c);
+	words = malloc(sizeof (*words) * (num_of_words + 1));
 	if (!words)
 		return (NULL);
-	word_i = 0 - 1;
-	i = 0 - 1;
-	while (s[++i])
+	word_i = 0;
+	i = 0;
+	while (word_i < num_of_words)
 	{
+		while (s[i] == c)
+		{
+			i++;
+		}
 		j = i;
 		while (s[j] && s[j] != c)
+		{
 			j++;
-		words[++word_i] = priv_strdup_partial(s, i, j);
+		}
+		words[word_i] = priv_strdup_partial(s, i, j);
 		if (!words[word_i])
 		{
 			priv_destroy(words, word_i);
 			return (NULL);
 		}
 		i = j;
+		word_i++;
 	}
-	words[word_i + 1] = NULL;
+	words[word_i] = NULL;
 	return (words);
 }
