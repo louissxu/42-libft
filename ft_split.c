@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:54:35 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 17:59:30 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/10 21:21:18 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static char	*priv_strdup_partial(char const *s, size_t start, size_t end)
 		word[i] = s[start + i];
 		i++;
 	}
-	s[start + i] = '\0';
+	word[i] = '\0';
 	return (word);
 }
 
@@ -44,7 +44,6 @@ static void	priv_destroy(char **words, size_t len)
 		i++;
 	}
 	free(words);
-	return ();
 }
 
 static size_t	priv_num_of_words(char const *s, char c)
