@@ -6,18 +6,22 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:53:16 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 16:53:18 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/10 20:37:40 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
+	char	*ptr;
 
+	ptr = s;
 	i = 0;
 	while (i < n)
 	{
-		s[i] = 0;
+		ptr[i] = 0;
 		i++;
 	}
 	return ;
