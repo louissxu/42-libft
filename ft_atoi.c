@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:41:55 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 16:42:27 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/10 20:20:02 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,25 @@ int	ft_atoi(const char *str)
 {
 	long int	result;
 	int			is_positive;
-	char		*ptr;
+	size_t		i;
 
 	result = 0;
 	is_positive = 1;
-	ptr = str;
-	while (*ptr && ft_isspace(*ptr))
+	i = 0;
+	while (str[i] && ft_isspace(str[i]))
 	{
-		ptr++;
+		i++;
 	}
-	if (*ptr == '-')
+	if (str[i] == '-')
 	{
 		is_positive = -1;
-		ptr++;
+		i++;
 	}
-	while (*ptr && ft_isdigit(*ptr))
+	while (str[i] && ft_isdigit(str[i]))
 	{
 		result = result * 10;
-		result = result + *ptr - '0';
-		ptr++;
+		result = result + str[i] - '0';
+		i++;
 	}
 	result = result * is_positive;
 	return ((int)result);
