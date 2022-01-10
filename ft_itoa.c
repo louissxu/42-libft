@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:53:36 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 20:20:57 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/11 01:04:47 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char	*ft_itoa(int n)
 	i = 0;
 	while (long_n)
 	{
-		num_string[len - i] = '0' + (long_n % 10);
+		num_string[len - i - 1] = '0' + (long_n % 10);
 		long_n = long_n / 10;
 		i++;
 	}
