@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:54:00 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 17:07:21 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/10 20:25:04 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*head;
 	t_list	*tail;
-	t_list	next_elem;
+	t_list	*next_elem;
 
 	if (!lst || !f || !del)
 		return (NULL);
