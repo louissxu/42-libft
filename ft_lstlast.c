@@ -6,11 +6,13 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:53:58 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 17:06:12 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/10 20:23:43 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-t_list	*ft_lstlast(t_lst *lst)
+#include "libft.h"
+
+t_list	*ft_lstlast(t_list *lst)
 {
 	while (lst->next)
 	{
