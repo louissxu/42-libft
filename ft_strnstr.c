@@ -6,9 +6,11 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:48:09 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 16:48:32 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/10 21:28:00 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -17,7 +19,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	if (!needle[0])
 	{
-		return (haystack);
+		return ((char *)haystack);
 	}
 	i = 0;
 	while (haystack[i] && i < len)
@@ -30,7 +32,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		}
 		if (!needle[j] && i + j <= len)
 		{
-			return (haystack + i);
+			return ((char *)haystack + i);
 		}
 		i++;
 	}
