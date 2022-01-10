@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:54:42 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 21:25:12 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/11 03:19:24 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 	size_t	j;
 
+	if (dstsize == 0)
+	{
+		return (ft_strlen(src));
+	}
 	i = 0;
-	while (dst[i] && i < dstsize - 1)
+	while (dst[i] && i < dstsize)
 	{
 		i++;
 	}
