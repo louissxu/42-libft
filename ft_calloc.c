@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:53:20 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 20:41:16 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/10 23:30:28 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	*ft_calloc(size_t count, size_t size)
 	while (i < count * size)
 	{
 		result[i] = 0;
+		i++;
 	}
 	return (result);
 }
