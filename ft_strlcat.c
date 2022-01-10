@@ -6,9 +6,11 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:54:42 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 17:42:42 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/10 21:25:12 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

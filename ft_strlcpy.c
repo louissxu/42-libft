@@ -6,9 +6,11 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:54:44 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 17:43:03 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/10 21:25:46 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {

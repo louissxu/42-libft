@@ -6,9 +6,11 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:54:49 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 16:54:50 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/10 21:26:27 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
