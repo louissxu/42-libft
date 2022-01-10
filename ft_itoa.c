@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:53:36 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 17:05:37 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/10 20:20:57 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	*ft_itoa(int n)
 	num_string = malloc(sizeof (*num_string) * (len + 1));
 	if (!num_string)
 		return (NULL);
-	if (long_n == 0)
+	if (n == 0)
 		num_string[0] = '0';
 	long_n = n;
 	if (long_n < 0)
