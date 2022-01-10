@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:53:53 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 17:05:49 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/10 20:21:38 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 
 	if (!lst || !del)
 	{
-		return ();
+		return ;
 	}
 	while (*lst)
 	{
