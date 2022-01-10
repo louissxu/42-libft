@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:54:09 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 21:20:14 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/10 23:57:17 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	else
 	{
-		i = len - 1;
-		while (i >= 0)
+		i = len;
+		while (i > 0)
 		{
-			dst_ptr[i] = src_ptr[i];
 			i--;
+			dst_ptr[i] = src_ptr[i];
 		}
 	}
 	return (dst);
