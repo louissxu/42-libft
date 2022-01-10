@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:54:35 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 17:39:32 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/10 17:59:30 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,28 +74,22 @@ char	**ft_split(char const *s, char c)
 
 	words = malloc(sizeof (*words) * (priv_num_of_words(s, c) + 1));
 	if (!words)
-	{
 		return (NULL);
-	}
-	i = 0;
-	word_i = 0;
-	while (s[i])
+	word_i = 0 - 1;
+	i = 0 - 1;
+	while (s[++i])
 	{
 		j = i;
 		while (s[j] && s[j] != c)
-		{
 			j++;
-		}
-		words[word_i] = priv_strdup_partial(s, i, j);
+		words[++word_i] = priv_strdup_partial(s, i, j);
 		if (!words[word_i])
 		{
 			priv_destroy(words, word_i);
 			return (NULL);
 		}
-		words_i++;
 		i = j;
-		i++;
 	}
-	words[word_i] = NULL;
+	words[word_i + 1] = NULL;
 	return (words);
 }
