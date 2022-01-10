@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include "ft_isalnum.c"
+//#include "ft_isalnum.c"
+#include "libft.h"
 #include <ctype.h>
 
 int main(void)
