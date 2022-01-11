@@ -18,16 +18,6 @@ SRC_CHAR = ft_isalnum.c \
 SRC_CONVERSION = ft_atoi.c \
 				 ft_itoa.c
 
-SRC_LIST = ft_lstadd_back.c \
-		   ft_lstadd_front.c \
-		   ft_lstclear.c \
-		   ft_lstdelone.c \
-		   ft_lstiter.c \
-		   ft_lstlast.c \
-		   ft_lstmap.c \
-		   ft_lstnew.c \
-		   ft_lstsize.c
-
 SRC_MEMORY = ft_bzero.c \
 			 ft_calloc.c \
 			 ft_memchr.c \
@@ -58,12 +48,29 @@ SRC_STR = ft_split.c \
 
 SRCS = $(SRC_CHAR) \
 	   $(SRC_CONVERSION) \
-	   $(SRC_LIST) \
 	   $(SRC_MEMORY) \
 	   $(SRC_PRINT) \
 	   $(SRC_STR)
 
 OBJS = $(SRCS:.c=.o)
+
+#-------------#
+#    BONUS    #
+#-------------#
+
+BONUS_SRC_LIST = ft_lstadd_back.c \
+				 ft_lstadd_front.c \
+				 ft_lstclear.c \
+				 ft_lstdelone.c \
+				 ft_lstiter.c \
+				 ft_lstlast.c \
+				 ft_lstmap.c \
+				 ft_lstnew.c \
+				 ft_lstsize.c
+
+BONUS_SRCS = $(BONUS_SRC_LIST)
+
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 #-------------#
 #    RULES    #
@@ -76,12 +83,17 @@ $(NAME):
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
+bonus:
+	$(CC) $(CFLAGS) -I . -c $(SRCS) $(BONUS_SRCS)
+	ar rc $(NAME) $(OBJS) $(BONUS_OBJS)
+	ranlib $(NAME)
+
 clean:
-	-rm $(OBJS)
+	-rm $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	-rm $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
