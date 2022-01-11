@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:53:58 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 20:23:43 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/11 16:37:03 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
+	if (!lst)
+	{
+		return (lst);
+	}
 	while (lst->next)
 	{
 		lst = lst->next;
