@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:54:58 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 17:45:53 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/17 11:36:47 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*result;
 	size_t	i;
 
-	chars_left = ft_strlen(s + start);
+	if (start > ft_strlen(s))
+		chars_left = 0;
+	else
+		chars_left = ft_strlen(s + start);
 	if (chars_left < len)
-	{
 		len = chars_left;
-	}
-	result = malloc(sizeof (*result) * len);
+	result = malloc(sizeof (*result) * (len + 1));
 	if (!result)
 	{
 		return (0);
@@ -34,5 +35,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		result[i] = s[start + i];
 		i++;
 	}
+	result[i] = '\0';
 	return (result);
 }
