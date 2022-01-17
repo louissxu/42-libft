@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:53:36 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/11 01:04:47 by lxu              ###   ########.fr       */
+/*   Updated: 2022/01/17 13:00:09 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,6 @@ char	*ft_itoa(int n)
 		long_n = long_n / 10;
 		i++;
 	}
-	num_string[len + 1] = '\0';
+	num_string[len] = '\0';
 	return (num_string);
 }
