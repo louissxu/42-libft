@@ -29,6 +29,12 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 
 /*
+ * CHAR EXTRA
+ */
+
+int		ft_isinstr(int c, char *str);
+
+/*
  * CONVERSION
  */
 

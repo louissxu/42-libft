@@ -73,20 +73,52 @@ BONUS_SRCS = $(BONUS_SRC_LIST)
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 #-------------#
+#    EXTRA    #
+#-------------#
+
+EXTRA_SRC_LIST = ft_isinstr.c
+
+EXTRA_SRCS = $(EXTRA_SRC_LIST)
+
+EXTRA_OBJS = $(EXTRA_SRCS:.c=.o)
+
+#-------------#
 #    RULES    #
 #-------------#
 
 all: $(NAME)
+
+$(OBJS): $(SRCS)
+	$(CC) $(CFLAGS) -I . -c $< -o $@
+
+$(BONUS_OBJS): $(BONUS_SRCS)
+	$(CC) $(CFLAGS) -I . -c $< -o $@
+
+$(EXTRA_OBJS): $(EXTRA_SRCS)
+	$(CC) $(CFLAGS) -I . -c $< -o $@
 
 $(NAME):
 	$(CC) $(CFLAGS) -I . -c $(SRCS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
+# $(NAME): $(OBJS)
+# 	ar rc $(NAME) $(OBJS)
+# 	ranlib $(NAME)
+
 bonus:
 	$(CC) $(CFLAGS) -I . -c $(SRCS) $(BONUS_SRCS)
 	ar rc $(NAME) $(OBJS) $(BONUS_OBJS)
 	ranlib $(NAME)
+
+# bonus: $(OBJS) $(BONUS_OBJS)
+# 	ar rc $(NAME) $(OBJS) $(BONUS_OBJS)
+# 	ranlib $(NAME)
+
+extra: $(OBJS) $(BONUS_OBJS) $(EXTRA_OBJS)
+	ar rc $(NAME) $(OBJS) $(BONUS_OBJS) $(EXTRA_OBJS)
+	ranlib $(NAME)
+
 
 clean:
 	-rm $(OBJS) $(BONUS_OBJS)
