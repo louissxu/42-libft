@@ -88,42 +88,28 @@ EXTRA_OBJS = $(EXTRA_SRCS:.c=.o)
 
 all: $(NAME)
 
+# Explanantion of pattern flags
+# Ref: https://stackoverflow.com/a/37701195
 $(OBJS): $(SRCS)
-	$(CC) $(CFLAGS) -I . -c $< -o $@
+	$(CC) $(CFLAGS) -I . -c $*.c -o $@
 
 $(BONUS_OBJS): $(BONUS_SRCS)
-	$(CC) $(CFLAGS) -I . -c $< -o $@
+	$(CC) $(CFLAGS) -I . -c $*.c -o $@
 
 $(EXTRA_OBJS): $(EXTRA_SRCS)
-	$(CC) $(CFLAGS) -I . -c $< -o $@
+	$(CC) $(CFLAGS) -I . -c $*.c -o $@
 
-$(NAME):
-	$(CC) $(CFLAGS) -I . -c $(SRCS)
+$(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
-# $(NAME): $(OBJS)
-# 	ar rc $(NAME) $(OBJS)
-# 	ranlib $(NAME)
-
-bonus:
-	$(CC) $(CFLAGS) -I . -c $(SRCS) $(BONUS_SRCS)
+bonus: $(OBJS) $(BONUS_OBJS)
 	ar rc $(NAME) $(OBJS) $(BONUS_OBJS)
 	ranlib $(NAME)
 
-# bonus: $(OBJS) $(BONUS_OBJS)
-# 	ar rc $(NAME) $(OBJS) $(BONUS_OBJS)
-# 	ranlib $(NAME)
-
-extra:
-	$(CC) $(CFLAGS) -I . -c $(SRCS) $(BONUS_SRCS) $(EXTRA_SRCS)
+extra: $(OBJS) $(BONUS_OBJS) $(EXTRA_OBJS)
 	ar rc $(NAME) $(OBJS) $(BONUS_OBJS) $(EXTRA_OBJS)
 	ranlib $(NAME)
-
-# extra: $(OBJS) $(BONUS_OBJS) $(EXTRA_OBJS)
-# 	ar rc $(NAME) $(OBJS) $(BONUS_OBJS) $(EXTRA_OBJS)
-# 	ranlib $(NAME)
-
 
 clean:
 	-rm $(OBJS) $(BONUS_OBJS) $(EXTRA_OBJS)
