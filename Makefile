@@ -112,10 +112,10 @@ extra: $(OBJS) $(BONUS_OBJS) $(EXTRA_OBJS)
 	ranlib $(NAME)
 
 clean:
-	-rm $(OBJS) $(BONUS_OBJS) $(EXTRA_OBJS)
+	rm -f $(OBJS) $(BONUS_OBJS) $(EXTRA_OBJS)
 
 fclean: clean
-	-rm $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
