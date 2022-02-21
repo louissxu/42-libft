@@ -13,40 +13,21 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static char	*priv_strdup_partial(char const *s, size_t start, size_t end)
-{
-	char	*word;
-	size_t	i;
-
-	word = malloc(sizeof (*word) * (end - start + 1));
-	if (!word)
-	{
-		return (word);
-	}
-	i = 0;
-	while (s[start + i] && start + i < end)
-	{
-		word[i] = s[start + i];
-		i++;
-	}
-	word[i] = '\0';
-	return (word);
-}
-
-static void	priv_destroy(char **words, size_t len)
+static void	destroy_table(char **table, size_t len)
 {
 	size_t	i;
 
 	i = 0;
 	while (i < len)
 	{
-		free(words[i]);
+		if (table[i])
+			free(table[i]);
 		i++;
 	}
-	free(words);
+	free(table);
 }
 
-static size_t	priv_num_of_words(char const *s, char c)
+static size_t	word_count(char const *s, char c)
 {
 	size_t	i;
 	size_t	number_of_words;
@@ -55,56 +36,58 @@ static size_t	priv_num_of_words(char const *s, char c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] != c)
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
 		{
-			if (s[i + 1] == c || s[i + 1] == '\0')
-			{
-				number_of_words++;
-			}
+			number_of_words++;
 		}
 		i++;
 	}
 	return (number_of_words);
 }
 
-static void	priv_find_word(char const *s, size_t *i, size_t *j, char c)
+static int	fill_table(char const *s, char c, char **table)
 {
-	while (s[*i] == c)
+	size_t	table_i;
+	size_t	i;
+	size_t	word_length;
+
+	table_i = 0;
+	i = 0;
+	while (s[i])
 	{
-		(*i)++;
+		while (s[i] == c)
+			i++;
+		if (s[i] != '\0')
+		{
+			word_length = 0;
+			while (s[i + word_length] != c && s[i + word_length] != '\0')
+				word_length++;
+			table[table_i] = ft_strslice(s, i, i + word_length);
+			if (!table[table_i])
+				return (1);
+			table_i++;
+			i += word_length;
+		}
 	}
-	*j = *i;
-	while (s[*j] && s[*j] != c)
-	{
-		(*j)++;
-	}
+	table[table_i] = NULL;
+	return (0);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	num_of_words;
-	size_t	word_i;
-	size_t	i;
-	size_t	j;
-	char	**words;
+	size_t	number_of_words;
+	char	**words_table;
+	int		error;
 
-	num_of_words = priv_num_of_words(s, c);
-	words = malloc(sizeof (*words) * (num_of_words + 1));
-	if (!words)
+	number_of_words = word_count(s, c);
+	words_table = malloc(sizeof (*words_table) * (number_of_words + 1));
+	if (!words_table)
 		return (NULL);
-	word_i = 0 - 1;
-	i = 0;
-	while (++word_i < num_of_words)
+	error = fill_table(s, c, words_table);
+	if (error)
 	{
-		priv_find_word(s, &i, &j, c);
-		words[word_i] = priv_strdup_partial(s, i, j);
-		if (!words[word_i])
-		{
-			priv_destroy(words, word_i);
-			return (NULL);
-		}
-		i = j;
+		destroy_table(words_table, number_of_words + 1);
+		return (NULL);
 	}
-	words[word_i] = NULL;
-	return (words);
+	return (words_table);
 }
