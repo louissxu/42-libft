@@ -173,6 +173,8 @@ OBJ_SUBDIRS = $(SRC_CHAR_DIR) \
 
 all: $(NAME)
 
+bonus: all
+
 # Explanantion of pattern flags
 # Ref: https://stackoverflow.com/a/37701195
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
@@ -193,4 +195,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re
