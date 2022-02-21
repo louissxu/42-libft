@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strslice.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/22 00:51:01 by lxu               #+#    #+#             */
+/*   Updated: 2022/02/22 00:51:03 by lxu              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 /**
@@ -12,7 +24,7 @@
  * @param right Right position to slice to (exclusive).
  * @return char* Heap string of sliced result.
  */
-char	*ft_strslice(char *str, size_t left, size_t right)
+char	*ft_strslice(const char *str, size_t left, size_t right)
 {
 	size_t	str_len;
 	size_t	result_str_len;
