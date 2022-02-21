@@ -12,19 +12,6 @@
 
 #include "libft.h"
 
-static int	priv_ft_inset(char c, char const *set)
-{
-	while (*set)
-	{
-		if (c == *set)
-		{
-			return (1);
-		}
-		set++;
-	}
-	return (0);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
@@ -34,9 +21,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	start = 0;
 	end = ft_strlen(s1);
-	while (s1[start] && priv_ft_inset(s1[start], set))
+	while (s1[start] && ft_isinstr(s1[start], set))
 		start++;
-	while (end > start && priv_ft_inset(s1[end - 1], set))
+	while (end > start && ft_isinstr(s1[end - 1], set))
 		end--;
 	result = malloc(sizeof (*result) * (end - start + 1));
 	if (!result)
