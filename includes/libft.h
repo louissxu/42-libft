@@ -14,6 +14,11 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <stddef.h>
+# include <stdarg.h>
+
+# include "libftprintf.h"
+# include "get_next_line.h"
 
 /*
  * CHAR
@@ -100,5 +105,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strslice(char *str, size_t left, size_t right);
 
 #endif
