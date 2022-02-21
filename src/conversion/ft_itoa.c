@@ -12,7 +12,6 @@
 
 #include "libft.h"
 #include <stdlib.h>
-#include "limits.h"
 
 static int	priv_calc_number_of_digits(int n)
 {

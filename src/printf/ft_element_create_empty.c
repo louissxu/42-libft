@@ -1,42 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_element_create_empty.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/10 16:54:41 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 17:42:12 by lxu              ###   ########.fr       */
+/*   Created: 2022/02/06 18:00:14 by lxu               #+#    #+#             */
+/*   Updated: 2022/02/06 18:00:15 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+t_element	*ft_element_create_empty(void)
 {
-	size_t	len;
-	char	*result;
-	size_t	i;
-	size_t	j;
+	t_element	*element;
 
-	len = ft_strlen(s1) + ft_strlen(s2);
-	result = malloc(sizeof (*result) * (len + 1));
-	if (!result)
+	element = malloc(sizeof(*element) * 1);
+	if (!element)
 	{
-		return (result);
+		return (NULL);
 	}
-	i = 0;
-	while (s1[i])
-	{
-		result[i] = s1[i];
-		i++;
-	}
-	j = 0;
-	while (s2[j])
-	{
-		result[i + j] = s2[j];
-		j++;
-	}
-	result[i + j] = '\0';
-	return (result);
+	element->flags = 0;
+	element->conversion_type = '\0';
+	element->precision = 0;
+	element->minimum_field_width = 0;
+	element->content_string = NULL;
+	return (element);
 }
