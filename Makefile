@@ -3,10 +3,9 @@
 #-----------------#
 
 NAME	= libft.a
-CC		= gcc
+CC		= emcc
 CFLAGS	= -Wall -Wextra -Werror
 INCLUDES = includes
-
 
 #---------------#
 #    SOURCES    #
@@ -182,8 +181,8 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -I $(INCLUDES) -c $< -o $@
 
 $(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
+	emar rcs $(NAME) $(OBJS)
+# ranlib $(NAME)
 
 clean:
 	-rm -f $(OBJS)
