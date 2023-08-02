@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 03:50:09 by lxu               #+#    #+#             */
-/*   Updated: 2023/08/02 16:55:52 by lxu              ###   ########.fr       */
+/*   Updated: 2023/08/02 16:56:16 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include "libftprintf.h"
 # include "get_next_line.h"
 # include "dlist.h"
+# include "deque.h"
 
 /*
  * CHAR
