@@ -6,11 +6,12 @@
 /*   By: lxu <lxu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 00:03:02 by lxu               #+#    #+#             */
-/*   Updated: 2023/08/02 16:51:41 by lxu              ###   ########.fr       */
+/*   Updated: 2023/08/02 21:24:28 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DEQUE_H
+# define DEQUE_H
 
 # include <stdlib.h>
 # include "dlist.h"
