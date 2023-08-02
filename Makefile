@@ -133,6 +133,16 @@ SRC_GNL_DIR = get_next_line
 SRC_GNL = get_next_line.c \
 		  get_next_line_utils.c
 
+# DLIST
+SRC_DLIST_DIR = dlist
+SRC_DLIST = dlist.c \
+			dlist1.c \
+			dlist2.c
+
+# DEQUE
+SRC_DEQUE_DIR = deque
+SRC_DEQUE = deque.c \
+			deque1.c
 
 #-----------------------#
 #    SRC DIRECTORIES    #
@@ -145,7 +155,9 @@ SRCS_RAW = $(addprefix $(SRC_CHAR_DIR)/, $(SRC_CHAR)) \
 		   $(addprefix $(SRC_STR_DIR)/, $(SRC_STR)) \
 		   $(addprefix $(SRC_LIST_DIR)/, $(SRC_LIST)) \
 		   $(addprefix $(SRC_PRINTF_DIR)/, $(SRC_PRINTF)) \
-		   $(addprefix $(SRC_GNL_DIR)/, $(SRC_GNL))
+		   $(addprefix $(SRC_GNL_DIR)/, $(SRC_GNL)) \
+		   $(addprefix $(SRC_DLIST_DIR)/, $(SRC_DLIST)) \
+		   $(addprefix $(SRC_DEQUE_DIR)/, $(SRC_DEQUE))
 
 SRC_DIR = src
 
