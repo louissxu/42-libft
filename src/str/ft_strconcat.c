@@ -6,27 +6,39 @@
 /*   By: lxu <lxu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 17:29:27 by lxu               #+#    #+#             */
-/*   Updated: 2023/08/04 17:29:51 by lxu              ###   ########.fr       */
+/*   Updated: 2023/08/04 18:12:06 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	total_length(size_t n, va_list args)
+char	*malloc_length_required(size_t n, va_list args, size_t *len)
 {
 	size_t	i;
 	char	*s;
 	size_t	total_length;
+	int		all_null;
 
 	i = 0;
 	total_length = 0;
+	all_null = 1;
 	while (i < n)
 	{
 		s = va_arg(args, char *);
-		total_length += ft_strlen(s);
+		if (s)
+		{
+			all_null = 0;
+			total_length += ft_strlen(s);
+		}
 		i++;
 	}
-	return (total_length);
+	if (all_null)
+	{
+		*len = 0;
+		return (NULL);
+	}
+	*len = total_length;
+	return (malloc(total_length + 1));
 }
 
 /**
@@ -48,12 +60,11 @@ char	*ft_strconcat(size_t n, ...)
 	char	*s;
 
 	va_start(args, n);
-	len = total_length(n, args);
+	result = malloc_length_required(n, args, &len);
 	va_end(args);
-	result = malloc(len + 1);
 	if (!result)
 	{
-		return (result);
+		return (NULL);
 	}
 	va_start(args, n);
 	i = 0;
