@@ -62,7 +62,8 @@ SRC_STR = ft_split.c \
 		  ft_strrchr.c \
 		  ft_strtrim.c \
 		  ft_substr.c \
-		  ft_strslice.c
+		  ft_strslice.c \
+		  ft_strconcat.c
 
 # LIST
 SRC_LIST_DIR = list
