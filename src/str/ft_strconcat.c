@@ -7,6 +7,7 @@ size_t	total_length(size_t n, va_list args)
 	size_t	total_length;
 
 	i = 0;
+	total_length = 0;
 	while (i < n)
 	{
 		s = va_arg(args, char*);
