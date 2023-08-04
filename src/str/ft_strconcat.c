@@ -47,7 +47,6 @@ char	*ft_strconcat(size_t n, ...)
 	while (i < len)
 	{
 		s = va_arg(args, char*);
-		ft_printf("debug copying in %s (len %d) at position %d\n", s, ft_strlen(s), i);
 		i += ft_strlcpy(&(result[i]), s, ft_strlen(s) + 1);
 	}
 	va_end(args);
