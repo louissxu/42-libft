@@ -1,7 +1,5 @@
 #include "libft.h"
 
-#include <stdio.h>
-
 /**
  * @brief String append in place
  * 
