@@ -16,6 +16,10 @@ void	ft_strappend(char **s1, char *s2)
 {
 	char	*new_str;
 
+	if (!(*s1) || !s2)
+	{
+		return;
+	}
 	new_str = ft_strconcat(2, *s1, s2);
 	if (!new_str)
 	{
