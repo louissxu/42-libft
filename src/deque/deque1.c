@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:39:37 by lxu               #+#    #+#             */
-/*   Updated: 2023/08/09 15:11:32 by lxu              ###   ########.fr       */
+/*   Updated: 2023/08/09 17:18:15 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ void	*ft_deque_popleft(t_deque *d)
 	void	*content;
 	t_dlist	*next_node;
 
+	if (!d)
+	{
+		return (NULL);
+	}
 	if (d->head == NULL)
 	{
 		return (NULL);
