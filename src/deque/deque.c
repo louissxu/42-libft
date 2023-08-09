@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:39:37 by lxu               #+#    #+#             */
-/*   Updated: 2023/08/02 16:52:54 by lxu              ###   ########.fr       */
+/*   Updated: 2023/08/09 15:12:11 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,13 +116,13 @@ void	*ft_deque_pop(t_deque *d)
 	t_dlist	*node;
 	void	*content;
 	t_dlist	*prev_node;
-
-	prev_node = d->tail->prev;
-	node = ft_dlist_pop_last(&d->tail);
-	if (!node)
+	
+	if (d->tail == NULL)
 	{
 		return (NULL);
 	}
+	prev_node = d->tail->prev;
+	node = ft_dlist_pop_last(&d->tail);
 	content = node->content;
 	d->tail = prev_node;
 	free(node);
