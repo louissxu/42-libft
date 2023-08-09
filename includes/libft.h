@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 03:50:09 by lxu               #+#    #+#             */
-/*   Updated: 2023/08/02 16:56:16 by lxu              ###   ########.fr       */
+/*   Updated: 2023/08/04 20:49:18 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,6 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strslice(const char *str, size_t left, size_t right);
 char	*ft_strconcat(size_t n, ...);
-void	ft_strappend(char **s1, char *s2);
+void	ft_strappend(char **s1, const char *s2);
 
 #endif

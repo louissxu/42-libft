@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 17:29:18 by lxu               #+#    #+#             */
-/*   Updated: 2023/08/04 19:10:01 by lxu              ###   ########.fr       */
+/*   Updated: 2023/08/09 15:10:25 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
  * @param s2 Second string to append.
  */
 
-void	ft_strappend(char **s1, char *s2)
+void	ft_strappend(char **s1, const char *s2)
 {
 	char	*new_str;
 
