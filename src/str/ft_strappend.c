@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 17:29:18 by lxu               #+#    #+#             */
-/*   Updated: 2023/08/09 15:10:25 by lxu              ###   ########.fr       */
+/*   Updated: 2023/08/14 18:45:24 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
  * @param s2 Second string to append.
  */
 
+#include <stdio.h>
+
 void	ft_strappend(char **s1, const char *s2)
 {
 	char	*new_str;
@@ -36,6 +38,10 @@ void	ft_strappend(char **s1, const char *s2)
 		return ;
 	}
 	if (!s2)
+	{
+		return ;
+	}
+	if (!s2[0])
 	{
 		return ;
 	}

@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 17:29:27 by lxu               #+#    #+#             */
-/*   Updated: 2023/08/04 18:12:06 by lxu              ###   ########.fr       */
+/*   Updated: 2023/08/14 18:25:30 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,10 @@ char	*ft_strconcat(size_t n, ...)
 	while (i < len)
 	{
 		s = va_arg(args, char *);
-		i += ft_strlcpy(&(result[i]), s, ft_strlen(s) + 1);
+		if (s)
+		{
+			i += ft_strlcpy(&(result[i]), s, ft_strlen(s) + 1);
+		}
 	}
 	va_end(args);
 	return (result);
