@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lxu <lxu@student.42adel.org.au>            +#+  +:+       +#+        */
+/*   By: lxu <lxu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:54:46 by lxu               #+#    #+#             */
-/*   Updated: 2022/01/10 21:26:09 by lxu              ###   ########.fr       */
+/*   Updated: 2023/08/16 21:05:38 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,16 @@
  * 
  * @param str String to measure.
  * @return size_t Number of chars in string. Not including the null terminator.
+ * @return Returns 0 if string is NULL.
  */
 size_t	ft_strlen(const char *s)
 {
 	size_t	size;
 
+	if (!s)
+	{
+		return (0);
+	}
 	size = 0;
 	while (s[size])
 	{
