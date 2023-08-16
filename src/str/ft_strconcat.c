@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 17:29:27 by lxu               #+#    #+#             */
-/*   Updated: 2023/08/14 18:25:30 by lxu              ###   ########.fr       */
+/*   Updated: 2023/08/16 21:06:16 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,18 @@ char	*malloc_length_required(size_t n, va_list args, size_t *len)
 }
 
 /**
- * @brief String concateantion.
+ * @brief String concatenation.
  * 
  * An implementation of string concatenation. Returns a new heap string which is
  * the result of concatenating a bunch of arg strings. Arg number is variadic.
- * 
+ *
+ * If all the str pointers themselves are NULL (ie not 0 length strings but NULL
+ * pointers). Then returns NULL.
+ *
  * @param n The number of string to concat.
  * @param ... The strings to concat.
  * @return char* Heap string of the concatenated result.
+ * @return NULL if all strings are NULL.
  */
 char	*ft_strconcat(size_t n, ...)
 {
