@@ -65,6 +65,7 @@ char	*ft_strconcat(size_t n, ...)
 
 	va_start(args, n);
 	result = malloc_length_required(n, args, &len);
+	result[len] = '\0';
 	va_end(args);
 	if (!result)
 	{
