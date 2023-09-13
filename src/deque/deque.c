@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:39:37 by lxu               #+#    #+#             */
-/*   Updated: 2023/08/09 21:08:22 by lxu              ###   ########.fr       */
+/*   Updated: 2023/09/13 18:00:28 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ void	*ft_deque_pop(t_deque *d)
 	t_dlist	*node;
 	void	*content;
 	t_dlist	*prev_node;
-	
+
 	if (!d)
 	{
 		return (NULL);

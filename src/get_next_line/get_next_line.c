@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lxu <marvin@42.fr>                         +#+  +:+       +#+        */
+/*   By: lxu <lxu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 16:09:07 by lxu               #+#    #+#             */
-/*   Updated: 2022/02/15 16:09:12 by lxu              ###   ########.fr       */
+/*   Updated: 2023/09/13 18:02:53 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
  * @brief Finds end char of a string. Either a \n or \0 char.
  * 
  * Searches a string for first instance of the end of a line (which will either
- * be a \n or a \0 if it is the last line). To keep track of this there is a var
- * passed by reference to keep a flag of whether it was a \n or \0 that was
+ * be a \n or a \0 if it is the last line). To keep track of this there is a
+ * var passed by reference to keep a flag of whether it was a \n or \0 that was
  * found.
  * 
  * @param buff The buffer object to search
  * @param new_line_found Integer passed as reference for flag if new line is
  * found. 1 if \n found. 0 if \0 found.
- * @return size_t The position of the found char in the string. In practice this
- * is the length of the string up to the line terminating char.
+ * @return size_t The position of the found char in the string. In practice
+ * this is the length of the string up to the line terminating char.
  */
 static size_t	find_end_char(t_buff *buff, int *new_line_found)
 {

@@ -6,7 +6,7 @@
 /*   By: lxu <lxu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 17:29:18 by lxu               #+#    #+#             */
-/*   Updated: 2023/08/16 20:57:49 by lxu              ###   ########.fr       */
+/*   Updated: 2023/09/13 18:03:25 by lxu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,7 @@ void	ft_strappend(char **s1, char const *s2)
 	char	*new_str;
 
 	if (!s1)
-	{
 		return ;
-	}
 	if (!*s1 && !s2)
 	{
 		*s1 = ft_strdup("");
@@ -44,14 +42,10 @@ void	ft_strappend(char **s1, char const *s2)
 		return ;
 	}
 	if (!s2)
-	{
 		return ;
-	}
 	new_str = ft_strconcat(2, *s1, s2);
 	if (!new_str)
-	{
 		return ;
-	}
 	free(*s1);
 	*s1 = new_str;
 }
